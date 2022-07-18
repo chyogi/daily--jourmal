@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Journal</title>
+    <link href="../daily- jourmal/styles/main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h2>Daily Journal</h2>
+    <main id="container">
+      <form class="entryForm">
+        <fieldset>
+          <label for="entryDate">Date</label>
+          <input type="date" name="entryDate" class="entryForm__date" />
+        </fieldset>
+        <fieldset>
+          <label for="conceptCovered">Concept covered</label>
+          <input
+            type="text"
+            name="conceptCovered"
+            class="entryForm__conceptCovered"
+          />
+        </fieldset>
+        <fieldset>
+          <label for="journalEntry">Journal entry</label>
+          <textarea
+            id="journalEntry"
+            name="journalEntry"
+            rows="5"
+            cols="33"
+            class="entryForm__journalEntry"
+          >
+          </textarea>
+        </fieldset>
+
+        <fieldset>
+          <label for="moodForTheDay">Mood for the day</label>
+
+          <select name="moodforTheDay" id="Mood for the day">
+            <option value="">--Please choose an option--</option>
+            <option value="sad">Sad</option>
+            <option value="ok">Ok</option>
+            <option value="good">Good</option>
+            <option value="sunny">Sunny</option>
+            <option value="dull">Dull</option>
+          </select>
+        </fieldset>
+
+        <button type="submit">Record journal entry</button>
+      </form>
+    </main>
+  </body>
+</html>
