@@ -1,0 +1,131 @@
+body {
+  background-color: #e4c9f0;
+  font-family: "Times New Roman", Times, serif;
+}
+
+header {
+  float: left;
+  margin: 20 px 20px 10px 20 px;
+}
+
+h1,
+h2,
+h3 {
+  color: purple;
+  font-weight: bolder;
+}
+
+.container {
+  width: 400px;
+}
+
+.textform {
+  display: flex;
+  flex-direction: column;
+}
+
+.entryform fieldset {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-family: cursive;
+  font-size: medium;
+}
+
+button {
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  background-color: darkblue;
+  text-align: center;
+  border-radius: 15px;
+  padding: 5px;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: crimson;
+}
+
+/* div {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+/* .jornalEnteries {
+  background-color: lightblue;
+  border: 2px blue;
+  border-radius: 2px;
+  margin: 40px;
+  padding: 10px;
+  width: 250px;
+  position: relative;
+} */
+
+.previous-entries-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+  background-color: lightpink;
+}
+.previous-entries-container:after {
+  display: block;
+  content: " ";
+  margin: 59px;
+  flex: 999 999 auto;
+}
+.previous-entries-container-item {
+  flex: 1 1 auto;
+  margin: 59px;
+  background-color: purple;
+  color: white;
+  height: 300px;
+  width: 300px;
+  text-align: center;
+  padding: 5px;
+  margin: 40px;
+  border-radius: 15px;
+  outline: 0.15rem solid #212952;
+  min-width: 200px;
+}
+
+.previous-journal-entry-title {
+  grid-area: title;
+  margin: 5px;
+  font-size: larger;
+  font-weight: 900;
+}
+
+.previous-journal-entry-date {
+  grid-area: date;
+  margin: 5px;
+}
+.previous-journal-entry-mood {
+  grid-area: mood;
+  margin: 5px;
+}
+.previous-journal-entry-concept {
+  grid-area: concept;
+  margin: 5px;
+}
+
+.previous-journal-entry-item-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    "title"
+    "date"
+    "mood"
+    "concept";
+
+  margin: 10px;
+}
+
+.previous-entries-title {
+  text-align: center;
+  font-size: larger;
+  font-weight: bolder;
+}
