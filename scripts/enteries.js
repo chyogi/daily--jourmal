@@ -56,7 +56,20 @@ const journalEntries = [
   },
 ];
 
- export const getJournalEntries = () => {
+export const addNewJournalEntry = (newEntry) => {
+
+   let maxId =parseInt(journalEntries.reduce((a,b) => (a.id >b.id ?a :b)).id);
+newEntry.id= maxId+1;
+  journalEntries.push(newEntry);
+  document.dispatchEvent(new CustomEvent("stateChanged"));
+
+};
+
+
+
+
+
+export const getJournalEntries = () => {
     const copyOfEntries = journalEntries.map(entry => ({...entry}))
-    return copyOfEntries
+    return copyOfEntries;
   }

@@ -1,8 +1,10 @@
-import {getJournalEntries} from './enteries.js' ;
-
-const enteries = getJournalEntries();
+import {getJournalEntries,addNewJournalEntry } from './enteries.js'
 
 
+
+const renderPreviousEntries = () => {
+
+  const enteries = getJournalEntries();
 let createPreviousEntriesContainerItemTemp = "";
 for (const journalEntry of enteries){
   const createPreviousJournalEntryItemContainer =`<div class="previous-journal-entry-item-container">
@@ -28,6 +30,37 @@ const createDivPreviousEntriesContainer =`<div class="previous-entries-container
 let htmlEnteries = createH2Element + createDivPreviousEntriesContainer ;
 
 document.getElementById("entries").innerHTML=htmlEnteries;
+}
+
+renderPreviousEntries();
+
+document.addEventListener("click",(event) => {
+
+  if (event.target.id=== "submit") {
+    const dateOfEntry =document.getElementById('entryDate').value;
+    const entryConcepts =document.getElementById('entryConcept').value;
+    const entryText =document.getElementById('journalEntry').value;
+    const entryMood =document.getElementById('moodforTheDay').value;
+
+    const newJournalEntry ={
+       date : dateOfEntry ,
+       concept : entryConcepts,
+       entry : entryText,
+       mood  :  entryMood,
+
+    };
+    addNewJournalEntry(newJournalEntry);
+  };
+})
+
+document.addEventListener("stateChanged", (event)=>{
+  renderPreviousEntries();
+
+
+})
+  
+
+
 
 
 

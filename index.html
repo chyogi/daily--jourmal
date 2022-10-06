@@ -13,15 +13,21 @@
     </div>
     <h2>Daily Journal</h2>
     <main id="container">
-      <form class="entryForm">
+      <div class="entryForm">
         <fieldset>
           <label for="entryDate">Date</label>
-          <input type="date" name="entryDate" class="entryForm__date" />
+          <input
+            type="date"
+            name="entryDate"
+            id="entryDate"
+            class="entryForm__date"
+          />
         </fieldset>
         <fieldset>
           <label for="conceptCovered">Concept covered</label>
           <input
             type="text"
+            id="entryConcept"
             name="conceptCovered"
             class="entryForm__conceptCovered"
           />
@@ -41,7 +47,7 @@
         <fieldset>
           <label for="moodForTheDay">Mood for the day</label>
 
-          <select name="moodforTheDay" id="Mood for the day">
+          <select name="moodforTheDay" id="moodforTheDay">
             <option value="">--Please choose an option--</option>
             <option value="sad">Sad</option>
             <option value="ok">Ok</option>
@@ -51,8 +57,8 @@
           </select>
         </fieldset>
 
-        <button type="submit">Record journal entry</button>
-      </form>
+        <button id="submit">Record journal entry</button>
+      </div>
       <article id="entries">
         <!-- <h2 class="previous-entries-title">Previous Entries</h2>
         <div class="previous-entries-container">
