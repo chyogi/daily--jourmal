@@ -1,10 +1,10 @@
-import {getJournalEntries,addNewJournalEntry } from './enteries.js'
+//import {addNewJournalEntry} from './enteries.js'
+import{getJournalEntries,sendRequest} from './dataAccess.js'
 
 
+const renderPreviousEntries = async () => {
 
-const renderPreviousEntries = () => {
-
-  const enteries = getJournalEntries();
+  const enteries = await getJournalEntries();
 let createPreviousEntriesContainerItemTemp = "";
 for (const journalEntry of enteries){
   const createPreviousJournalEntryItemContainer =`<div class="previous-journal-entry-item-container">
@@ -34,9 +34,11 @@ document.getElementById("entries").innerHTML=htmlEnteries;
 
 renderPreviousEntries();
 
-document.addEventListener("click",(event) => {
+document.addEventListener("click",async (event) => {
+  
 
   if (event.target.id=== "submit") {
+    event.preventDefault();
     const dateOfEntry =document.getElementById('entryDate').value;
     const entryConcepts =document.getElementById('entryConcept').value;
     const entryText =document.getElementById('journalEntry').value;
@@ -49,11 +51,18 @@ document.addEventListener("click",(event) => {
        mood  :  entryMood,
 
     };
-    addNewJournalEntry(newJournalEntry);
+     await sendRequest(newJournalEntry);
+    document.getElementById('entryDate').value="";
+    document.getElementById('entryConcept').value="";
+    document.getElementById('journalEntry').value="";
+    document.getElementById('moodforTheDay').value="S";
+
   };
 })
 
 document.addEventListener("stateChanged", (event)=>{
+  //console.log("stateChanged started")
+  event.preventDefault();
   renderPreviousEntries();
 
 
